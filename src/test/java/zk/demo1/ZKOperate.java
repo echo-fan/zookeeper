@@ -22,11 +22,7 @@ public class ZKOperate {
         curatorFramework.start();
 
         //创建持久节点
-
         curatorFramework.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath("/hello/abc","helloword".getBytes());
-
-
-
 
         //停止服务端
         curatorFramework.close();
@@ -44,10 +40,7 @@ public class ZKOperate {
                 .creatingParentsIfNeeded()
                 .withMode(CreateMode.EPHEMERAL)
                 .forPath("/linshi/abc","linshi".getBytes());
-
-
         Thread.sleep(8000);
-
         curatorFramework.close();
 
 
@@ -58,13 +51,8 @@ public class ZKOperate {
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(
                 "hadoop11:2181,hadoop12:2181,hadoop13:2181",
                 new ExponentialBackoffRetry(3000,3));
-
-
         curatorFramework.start();
-
          curatorFramework.setData().forPath("/bb01", "bbbb".getBytes());
-
-
         curatorFramework.close();
     }
 
