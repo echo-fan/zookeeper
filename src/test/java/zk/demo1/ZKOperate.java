@@ -29,6 +29,7 @@ public class ZKOperate {
 
     }
     @Test
+    //创建节点
     public void createTempNode() throws Exception {
 
         ExponentialBackoffRetry retry = new ExponentialBackoffRetry(3000, 3);
@@ -47,6 +48,7 @@ public class ZKOperate {
     }
 
     @Test
+    //设置节点信息
     public void updateNode() throws Exception {
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(
                 "hadoop11:2181,hadoop12:2181,hadoop13:2181",
@@ -58,6 +60,7 @@ public class ZKOperate {
 
 
     @Test
+    //获取节点信息
     public void getNode() throws Exception {
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("" +
                         "hadoop11:2181,hadoop12:2181,hadoop13:2181",
